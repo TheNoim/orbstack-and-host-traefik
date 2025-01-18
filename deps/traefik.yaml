@@ -1,0 +1,21 @@
+entryPoints:
+  web:
+    address: ":53504"
+  api:
+    address: ":37308"
+    
+
+providers:
+  docker:
+    endpoint: "unix:///var/run/docker.sock"
+    exposedByDefault: false
+    constraints: "Label(`orbstack.test`,`true`)"
+
+global:
+  checkNewVersion: false
+  sendAnonymousUsage: false
+
+log:
+  level: DEBUG
+
+api: {}
