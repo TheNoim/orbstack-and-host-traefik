@@ -93,6 +93,8 @@ launchctl load $HOME/Library/LaunchAgents/io.noim.traefik_orbstack_test.plist
 # Fail if service isn't loaded
 launchctl list | grep io.noim&>/dev/null
 
+touch /tmp/io.noim.traefik_orbstack_test.out
+
 tail -f /tmp/io.noim.traefik_orbstack_test.out &
 
 traefik_is_ready () {
